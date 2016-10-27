@@ -6,3 +6,4 @@ createfs:
 	$(DOCKER_PREFIX) docker rm alpine-test
 	tar --delete -f rootfs.tar .dockerenv
 	tar --delete -f rootfs.tar .dockerinit
+	gzip rootfs.tar
