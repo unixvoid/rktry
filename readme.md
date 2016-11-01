@@ -15,10 +15,11 @@ make clean         : clean up project directory
 ##Usage
 There are two ways to build an ACI with this tool: manual and scripted.  
 
-The manual way will set up an alpine filesystem and allow you to install
+- The manual way will set up an alpine filesystem and allow you to install
 packages in this environment to prep for deployment.  After the packages are
 installed rktry will launch acbuild and allow you setup a manifest file.
+- Steps for manual: `make`, `make fetch-acbuild`
 
-The scripted way will allow you to create commands to run inside the alpine
+- The scripted way will allow you to create commands to run inside the alpine
 filesystem to prep for deployment and take a supplied manifest file to create
 the ACI.
