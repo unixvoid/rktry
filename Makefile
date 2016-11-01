@@ -32,12 +32,14 @@ fetch-acbuild:
 	tar xzf acbuild-$(ACBUILD_VER).tar.gz
 	rm acbuild-$(ACBUILD_VER).tar.gz
 	mv acbuild-$(ACBUILD_VER) acbuild
+	deps/invoke.acbuild.sh
 
 fetch-actool:
 	wget https://github.com/appc/spec/releases/download/$(ACTOOL_VER)/appc-$(ACTOOL_VER).tar.gz
 	tar xzf appc-$(ACTOOL_VER).tar.gz
 	rm appc-$(ACTOOL_VER).tar.gz
 	mv appc-$(ACTOOL_VER) appc
+
 clean:
 	rm -rf rootfs/
 	rm -f rootfs.tar
