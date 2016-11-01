@@ -1,2 +1,5 @@
 rootfs.tar*
-rktryfs/
+rktry-layout
+actool*
+appc*
+acbuild*
