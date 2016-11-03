@@ -1,0 +1,56 @@
+{
+    "acKind": "ImageManifest",
+    "acVersion": "0.8.8",
+    "name": "unixvoid.com/rktry",
+    "labels": [
+        {
+            "name": "version",
+            "value": "latest"
+        },
+        {
+            "name": "arch",
+            "value": "amd64"
+        },
+        {
+            "name": "os",
+            "value": "linux"
+        }
+    ],
+    "app": {
+        "user": "root",
+        "group": "root",
+        "exec": [
+            "/usr/sbin/nginx"
+        ],
+        "ports": [
+        {
+            "name": "web-tcp",
+            "protocol": "tcp",
+            "port": 8080
+        },
+        {
+            "name": "web-udp",
+            "protocol": "udp",
+            "port": 8080
+        }
+        ],
+    	"mountPoints": [
+    	    {
+    	        "name": "conf",
+    	        "path": "/etc/nginx/",
+    	        "readOnly": true
+    	    },
+    	    {
+    	        "name": "data",
+    	        "path": "/cryo/data",
+    	        "readOnly": true
+    	    }
+    	]
+    },
+    "annotations": [
+        {
+        "name": "authors",
+        "value": "Matthew Faltys <mfaltys@gmail.com>"
+    }
+    ]
+}
