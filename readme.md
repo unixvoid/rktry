@@ -8,6 +8,7 @@ make fetch-acbuild : pull an acbuild binary and ready an acbuild environment
 make fetch-actool  : pull an actool binary for later use
 
 make bootstrap     : stage filesystem directory
+make pull-bootstrap: pull filesystem tarball and open
 make package       : package up rootfs for later use
 make clean         : clean up project directory
 ```

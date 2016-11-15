@@ -2,10 +2,13 @@ OS_PERMS=sudo
 DOCKER_PREFIX=sudo
 ACBUILD_VER=v0.4.0
 ACTOOL_VER=v0.8.8
+ARCH=amd64
 
 all: bootstrap enter
 
 bootstrap: createfs open
+
+pull-bootstrap: pullfs opengz
 
 package: createfs compress
 
@@ -26,6 +29,9 @@ createfs:
 	tar --delete -f rootfs.tar .dockerenv
 	tar --delete -f rootfs.tar .dockerinit
 
+pullfs:
+	wget -O rootfs.tar.gz https://cryo.unixvoid.com/bin/filesystem/alpine/linux-latest-$(ARCH).rootfs.tar.gz
+
 compress:
 	gzip rootfs.tar
 
@@ -33,6 +39,11 @@ open:
 	mkdir -p rktry-layout/rootfs/
 	tar -xf rootfs.tar -C rktry-layout/rootfs/
 	rm rootfs.tar
+
+opengz:
+	mkdir -p rktry-layout/rootfs/
+	tar -xzf rootfs.tar.gz -C rktry-layout/rootfs/
+	rm rootfs.tar.gz
 
 fetch-acbuild:
 	wget https://github.com/containers/build/releases/download/$(ACBUILD_VER)/acbuild-$(ACBUILD_VER).tar.gz
