@@ -27,7 +27,7 @@ createfs:
 	$(DOCKER_PREFIX) docker export alpine-test > rootfs.tar
 	$(DOCKER_PREFIX) docker rm alpine-test
 	tar --delete -f rootfs.tar .dockerenv
-	tar --delete -f rootfs.tar .dockerinit
+	#tar --delete -f rootfs.tar .dockerinit
 
 pullfs:
 	wget -O rootfs.tar.gz https://cryo.unixvoid.com/bin/filesystem/alpine/linux-latest-$(ARCH).rootfs.tar.gz
